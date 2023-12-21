@@ -1,5 +1,6 @@
 on: [push]
-
+env:
+  REDOCLY_API_KEY: sk_rXdIPcgjv6U7XIy5h3878WoO3Dg=_lATEPUmDMji/6B+odlKInphandp53yiUVb9V415MoyM=
 jobs:
   hello_world_job:
     runs-on: ubuntu-latest
