@@ -1,6 +1,8 @@
-name: GitHub Actions Demo
+name: GitHub Actions Push Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
+env:
+  REDOCLY_API_KEY: sk_rXdIPcgjv6U7XIy5h3878WoO3Dg=_lATEPUmDMji/6B+odlKInphandp53yiUVb9V415MoyM=
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
@@ -18,4 +20,4 @@ jobs:
 
       - name: run redocly cli push
         run: |
-          npx @redocly/cli@latest push test.yml --destination="CI-CD-test@v3" --organization="testing_redocly"
+          REDOCLY_AUTHORIZATION=$REDOCLY_API_KEY npx @redocly/cli@latest push test.yml --destination="CI-CD-test@v3" --organization="testing_redocly"
