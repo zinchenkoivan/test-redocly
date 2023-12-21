@@ -7,9 +7,47 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: zinchenkoivan/hello-world-javascript-action@v1.3
+        uses: zinchenkoivan/hello-world-javascript-action@v1.4
         with:
-          who-to-greet: 'Mona the Octocat'
+          argv: '{
+            "api": "your-api-value",
+            "destination": "CI-CD-test@v3",
+            "branchName": "your-branchName-value",
+            "upsert": true,
+            "job-id": "your-job-id-value",
+            "batch-size": 10,
+            "region": "your-region-value",
+            "skip-decorator": ["skip-decorator-value-1", "skip-decorator-value-2"],
+            "public": true,
+            "files": [],
+            "organization": "testing_redocly",
+            "config": "testConfig"
+          }'
+          config: '{
+            "apis": {
+              "api1": {
+                "resolvedApiField1": "value1"
+              }
+            },
+            "styleguide": {
+              "styleguideField1": "styleguideValue1"
+            },
+            "resolve": {
+              "resolveField2": "resolveValue2"
+            },
+            "licenseKey": "yourLicenseKey",
+            "region": "yourRegion",
+            "theme": {
+              "themeField1": "themeValue1"
+            },
+            "organization": "yourOrganization",
+            "files": [],
+            "telemetry": {
+              "telemetryField1": "telemetryValue1"
+            },
+            "rawConfig": {},
+            "configFile": "test.yml"
+            }'
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
