@@ -1,0 +1,21 @@
+name: GitHub Actions Demo
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+
+      - name: Install Redocly CLI
+        run: npm install -g @redocly/cli
+
+      - name: run redocly cli push
+        run: |
+          npx @redocly/cli@latest push test.yml --destination="CI-CD-test@v3" --organization="testing_redocly"
