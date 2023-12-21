@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: zinchenkoivan/hello-world-javascript-action@v1.6
+        uses: zinchenkoivan/hello-world-javascript-action@v1.8
         with:
           argv: '{
             "api": "your-api-value",
