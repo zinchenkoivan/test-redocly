@@ -36,7 +36,7 @@ jobs:
               "resolveField2": "resolveValue2"
             },
             "licenseKey": "yourLicenseKey",
-            "region": "yourRegion",
+            "region": "eu",
             "theme": {
               "themeField1": "themeValue1"
             },
