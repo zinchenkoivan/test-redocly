@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: zinchenkoivan/hello-world-javascript-action@v1.4
+        uses: zinchenkoivan/hello-world-javascript-action@v1.5
         with:
           argv: '{
             "api": "your-api-value",
@@ -16,7 +16,7 @@ jobs:
             "upsert": true,
             "job-id": "your-job-id-value",
             "batch-size": 10,
-            "region": "your-region-value",
+            "region": "eu",
             "skip-decorator": ["skip-decorator-value-1", "skip-decorator-value-2"],
             "public": true,
             "files": [],
